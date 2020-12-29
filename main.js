@@ -12,8 +12,8 @@ if (existsSync(pkgDir)) {
         require(resolve(currentDir, pkg))
     }
     catch (e) {
-        console.log("Schippo Requires a binary to be set")
+        console.log("Schip Requires a binary to be set")
     }
 } else {
-    console.log("Schippo can only be used from root of npm package")
+    console.log("Schip can only be used from root of npm package")
 }

@@ -1,5 +1,5 @@
 {
-  "name": "schippo",
+  "name": "schip",
   "version": "0.0.1",
   "description": "CLI Utility to use custom wrappers",
   "main": "main.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elcharitas/schippo.git"
+    "url": "git+https://github.com/elcharitas/schip.git"
   },
   "keywords": [
     "cli",
@@ -21,9 +21,9 @@
   "author": "Jonathan Irhodia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/elcharitas/schippo/issues"
+    "url": "https://github.com/elcharitas/schip/issues"
   },
-  "homepage": "https://github.com/elcharitas/schippo#readme",
+  "homepage": "https://github.com/elcharitas/schip#readme",
   "dependencies": {},
   "devDependencies": {}
 }
