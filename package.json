@@ -1,6 +1,6 @@
 {
   "name": "schip",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI Utility to use custom wrappers",
   "main": "main.js",
   "bin": {
