@@ -1,0 +1,27 @@
+{
+  "name": "schippo",
+  "version": "0.0.1",
+  "description": "CLI Utility to use custom wrappers",
+  "main": "main.js",
+  "bin": {
+    "schip": "./main.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elcharitas/schippo.git"
+  },
+  "keywords": [
+    "cli",
+    "wrapper",
+    "custom"
+  ],
+  "author": "Jonathan Irhodia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elcharitas/schippo/issues"
+  },
+  "homepage": "https://github.com/elcharitas/schippo#readme"
+}
