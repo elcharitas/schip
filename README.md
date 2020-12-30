@@ -20,7 +20,7 @@ Create a `bin.js` file in the root of your project or edit your package.json to 
 }
 ```
 
-Noww you can run
+Now you can run
 ``` sh
 $ schip <mycommand>
 ```

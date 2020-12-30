@@ -1,31 +1,36 @@
 #! /usr/bin/env node
-
 const { existsSync, readFileSync } = require("fs")
 const { resolve } = require("path")
-const { load } = require('npm/lib/npm.js')
+const { load } = require("npm/lib/npm.js")
 const currentDir = process.cwd()
 
-const wrap = (prefix) => {
-    const pkgDir = resolve(prefix, "./package.json")
-    const package = JSON.parse(readFileSync(pkgDir))
-    const pkg = package.bin ? package.bin[Object.keys(package.bin)[0]] : "./bin.js"
-    
-    try {
-        process.chdir(prefix)
-        require(resolve(prefix, pkg))
+// get absolute path to package if it exists
+const pkgPath = (prefix, pkg = "./package.json") => {
+    process.chdir(prefix)
+    let path = resolve(prefix, pkg)
+    if (existsSync(path)) {
+        return path
     }
-    catch (e) {
+    return null
+}
+
+// wrap first command or bin.js
+const wrap = (prefix) => {
+    const pkgDir = pkgPath(prefix)
+    const package = JSON.parse(readFileSync(pkgDir))
+    let pkg = package.bin ? package.bin[Object.keys(package.bin)[0]] : "./bin.js"
+    
+    if(pkg = pkgPath(prefix, pkg)) {
+        require(pkg)
+    } else {
         console.log("Schip Requires a `bin` to be set")
     }
 }
 
-if (existsSync(resolve(currentDir, "./package.json"))){
-    wrap(currentDir)
-} else {
+// its time to schip
+if (!pkgPath(currentDir)) {
     load({}, function (err) {
-        if (err) {
-            return console.log("Schip can only be used from root of npm package")
-        }
+        if (err) return console.log("Schip could not process npm package")
         wrap(this.prefix)
     })
-}
+} else wrap(currentDir)
