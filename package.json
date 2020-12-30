@@ -1,7 +1,7 @@
 {
   "name": "schip",
-  "version": "0.0.2",
-  "description": "CLI Utility to use custom wrappers",
+  "version": "0.0.3",
+  "description": "Zero dependency CLI Utility for testing binaries",
   "main": "main.js",
   "bin": {
     "schip": "./main.js"
